@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PhpInfo</title>
+	</head>
+	<style>
+		h4 {
+			margin-bottom:10px;
+		}
+		p {
+			margin:10px 8px 0;
+		}
+		a {
+			width:100px;
+			height:50px;
+			padding:10px;
+			display:block;
+		}
+	</style>
+	<body>
+		<?php 
+			# Superglobal $GLOBALS
+			echo "<h4>Vari&aacute;veis Globais</h4>";
+			$x = 12;
+			$y = 23;
+			$z = $x + $y;
+			foreach(array_slice($GLOBALS,-3) as $var => $val){
+				echo "<p>$var: $val</p>";
+			}
+			# Superglobal $_SERVER
+			echo "<h4>Propriedades de _SERVER</h4>";
+			foreach(array('PHP_SELF','SERVER_NAME','HTTP_HOST','HTTP_REFERER','HTTP_USER_AGENT','SCRIPT_NAME') as $prop){
+				echo "<p>".$prop.": ".$_SERVER[$prop]."</p>";
+			}
+		?>
+		<a href="teste_get.php?id='<?php echo mt_rand(1000,9999); ?>'&chave='<?php echo mt_rand(0,10000000000000000); ?>'">Teste $GET</a>
+	</body>
+</html>

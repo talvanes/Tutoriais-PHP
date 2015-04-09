@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Validation Example</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="estilo.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <form name="form" action="teste.php" method="post" onsubmit="return ValidateOnSubmitForm();">
+    <label for="name">Nome:</label>
+    <input type="text" name="name" id="name" />
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" />
+    <label for="nasc">Data de nascimento:</label>
+    <input type="text" name="nasc" id="nasc" />
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpar campos</button>
+    </form>
+</body>
+</html>
